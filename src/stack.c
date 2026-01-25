@@ -33,17 +33,21 @@ Stack push_stack(Stack st, void* value)
 
 Stack pop_stack(Stack st)
 {
-    Stack temp = st;
-
     if(is_empty_stack(st))
-    {
-        printf("The stack is empty");
         return new_stack();
-    }
 
+    Stack temp = st;
     st = st->next;
-    temp->next = NULL;
 
     free(temp);
     return st;
+}
+/*====================================*/
+
+Stack clear_stack(Stack st)
+{
+    while (st != NULL)
+        st = pop_stack(st);
+
+    return NULL;
 }
