@@ -18,4 +18,6 @@
     Stack new_stack(void);
     bool is_empty_stack(Stack st);
     Stack push_stack(Stack st, void* value);
+    Stack pop_stack(Stack st);
+
 #endif

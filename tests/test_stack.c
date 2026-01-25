@@ -29,6 +29,22 @@ void test_push_stack(void)
     free(st);
 }
 
+void test_pop_stack(void)
+{
+    Stack st = new_stack();
+    int value = 10;
+    char *greeting = "hello";
+
+    st = push_stack(st, &value);
+    st = push_stack(st, greeting);
+
+    st = pop_stack(st);
+
+    TEST_ASSERT_EQUAL_PTR(&value, (st->data));
+
+    free(st);
+}
+
 int main(void)
 {
     UNITY_BEGIN();
@@ -36,6 +52,7 @@ int main(void)
     RUN_TEST(test_new_stack_creation);
     RUN_TEST(test_is_empty_stack);
     RUN_TEST(test_push_stack);
+    RUN_TEST(test_pop_stack);
 
     return UNITY_END();
 }
