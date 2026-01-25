@@ -1,7 +1,6 @@
 #ifndef __STACK__H__
 #define __STACK__H__
 
-#include <stddef.h>
 #include <stdbool.h> 
 
 /*
@@ -10,7 +9,6 @@
     typedef struct StackElement {
         void* data;
         struct StackElement *next;
-        size_t size;
     }StackElement, *Stack;
 
     /*
@@ -19,7 +17,5 @@
 
     Stack new_stack(void);
     bool is_empty_stack(Stack st);
-    // void push_stack(Stack st, &value);
-
-
+    Stack push_stack(Stack st, void* value);
 #endif

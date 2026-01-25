@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "stack.h"
 
 
@@ -13,10 +14,18 @@ bool is_empty_stack(Stack st)
 }
 /*====================================*/
 
+Stack push_stack(Stack st, void* value)
+{
+    StackElement* element = malloc(sizeof(StackElement));
 
-// void push_stack(Stack st, &value)
-// {
-//     Stack element = new_stack();
+    if(element == NULL)
+    {
+        fprintf(stderr, "ERROR ! memory allocation failed");
+        exit(EXIT_FAILURE);
+    }
 
-//     element->data = 
-// }
+    element->data = value;
+    element->next = st;
+
+    return element;
+}
