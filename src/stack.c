@@ -60,3 +60,18 @@ void* peek_stack(Stack st)
 
     return st->data;
 }
+/*====================================*/
+
+size_t length_stack(Stack st)
+{
+    Stack temp = st;
+    size_t length = 0;
+
+    while(temp != NULL)
+    {
+        length++;
+        temp = temp->next;
+    }
+
+    return length;
+}

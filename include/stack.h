@@ -2,6 +2,7 @@
 #define __STACK__H__
 
 #include <stdbool.h> 
+#include <stdint.h>
 
 /*
 * Stack definition
@@ -21,5 +22,6 @@
     Stack pop_stack(Stack st);
     Stack clear_stack(Stack st);
     void* peek_stack(Stack st);
+    size_t length_stack(Stack st);
 
 #endif
