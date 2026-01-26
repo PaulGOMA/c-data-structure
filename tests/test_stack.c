@@ -61,6 +61,22 @@ void test_clear_stack(void)
     free(st);
 }
 
+void test_peek_stack(void)
+{
+    Stack st = new_stack();
+    int value = 10;
+    char *greeting = "hello";
+
+    st = push_stack(st, &value);
+    st = push_stack(st, greeting);
+
+    char *top = (char*)peek_stack(st);
+
+    TEST_ASSERT_EQUAL_PTR(greeting, top);
+
+    free(st);
+}
+
 int main(void)
 {
     UNITY_BEGIN();
@@ -70,6 +86,7 @@ int main(void)
     RUN_TEST(test_push_stack);
     RUN_TEST(test_pop_stack);
     RUN_TEST(test_clear_stack);
+    RUN_TEST(test_peek_stack);
 
     return UNITY_END();
 }

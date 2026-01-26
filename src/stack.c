@@ -51,3 +51,12 @@ Stack clear_stack(Stack st)
 
     return NULL;
 }
+/*====================================*/
+
+void* peek_stack(Stack st)
+{
+    if(is_empty_stack(st))
+        return NULL;
+
+    return st->data;
+}

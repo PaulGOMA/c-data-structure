@@ -20,5 +20,6 @@
     Stack push_stack(Stack st, void* value);
     Stack pop_stack(Stack st);
     Stack clear_stack(Stack st);
+    void* peek_stack(Stack st);
 
 #endif
