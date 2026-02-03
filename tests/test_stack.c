@@ -74,10 +74,11 @@ void test_peek_stack(void)
 
     TEST_ASSERT_EQUAL_PTR(greeting, top);
 
+    st = clear_stack(st);
     free(st);
 }
 
-void test_top_stack(void)
+void test_length_stack(void)
 {
     Stack st = new_stack();
     int value = 10;
@@ -88,6 +89,7 @@ void test_top_stack(void)
 
     TEST_ASSERT_EQUAL_size_t(2, length_stack(st));
 
+    st = clear_stack(st);
     free(st);
 }
 
@@ -101,7 +103,7 @@ int main(void)
     RUN_TEST(test_pop_stack);
     RUN_TEST(test_clear_stack);
     RUN_TEST(test_peek_stack);
-    RUN_TEST(test_top_stack);
+    RUN_TEST(test_length_stack);
 
     return UNITY_END();
 }
